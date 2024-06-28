@@ -1,28 +1,44 @@
-[HttpPost("calculate")]
-public ActionResult<double> CalculatePercentage([FromBody] List<MarksModel> marks)
+using Microsoft.AspNetCore.Mvc;
+using MarksCalculatorAPI.Models;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace MarksCalculatorAPI.Controllers
 {
-    if (marks == null || !marks.Any())
+    [ApiController]
+    [Route("api/marks")]
+    public class MarksController : ControllerBase
     {
-        return BadRequest("Marks cannot be empty");
-    }
+        private static List<MarksModel> _marksData = new List<MarksModel>();
 
-    _marksData.Clear();  // Clear previous data
-    _marksData.AddRange(marks);
-
-    double totalPercentage = 0;
-
-    foreach (var mark in marks)
-    {
-        if (mark.MaxMarks <= 0)
+        [HttpPost("calculate")]
+        public ActionResult<double> CalculatePercentage([FromBody] List<MarksModel> marks)
         {
-            return BadRequest("Max marks must be greater than zero");
+            if (marks == null || !marks.Any())
+            {
+                return BadRequest("Marks cannot be empty");
+            }
+
+            // Clear old data before adding new data
+            _marksData.Clear();
+            _marksData.AddRange(marks);
+
+            double totalMarks = marks.Sum(m => m.Marks);
+            double totalMaxMarks = marks.Sum(m => m.MaxMarks);
+
+            if (totalMarks > totalMaxMarks)
+            {
+                return BadRequest("Marks cannot be greater than Max Marks");
+            }
+
+            double percentage = Math.Round((totalMarks / totalMaxMarks) * 100, 2);
+            return Ok(percentage);
         }
 
-        double percentage = Math.Round(((double)mark.Marks / mark.MaxMarks) * 100, 2);
-        totalPercentage += percentage;
+        [HttpGet("marks")]
+        public ActionResult<List<MarksModel>> GetMarksData()
+        {
+            return Ok(_marksData);
+        }
     }
-
-    double averagePercentage = totalPercentage / marks.Count;
-
-    return Ok(averagePercentage);
 }

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MarksCalculatorAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99d28788a235fc21e844d5dba96c7c261a64b9a6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aef6b187e5d163000f3905349f23450fffc51d92")]
 [assembly: System.Reflection.AssemblyProductAttribute("MarksCalculatorAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MarksCalculatorAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
