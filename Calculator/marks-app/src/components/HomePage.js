@@ -19,27 +19,30 @@ const HomePage = () => {
 
   const handleCalculatePercentage = async () => {
     try {
-      const response = await fetch(
-        "http://localhost:5066/api/marks/calculatePercentage",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(marks.map((mark) => parseInt(mark))),
-        }
-      );
-
+      const marksToSend = Object.keys(marks).map((subject, index) => {
+        return { Subject: subject, Marks: marks[subject] };
+      });
+  
+      const response = await fetch("http://localhost:5017/marks/calculate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(marksToSend),
+      });
+  
       if (!response.ok) {
         throw new Error("Failed to calculate percentage");
       }
-
+  
       const data = await response.json();
       setPercentage(data);
     } catch (error) {
       console.error("Error calculating percentage:", error);
+      // Handle error (e.g., show a message to the user)
     }
   };
+  
 
   const handleNextPage = () => {
     navigate("/piechart");
