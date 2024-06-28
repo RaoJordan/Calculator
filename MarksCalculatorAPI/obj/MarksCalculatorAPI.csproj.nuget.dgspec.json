@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\yadav\\Documents\\Project\\Marks Calculator\\MarksCalculatorAPI\\MarksCalculatorAPI.csproj": {}
+    "C:\\Users\\Yash\\Desktop\\Personal\\yatin-calculator\\Calculator\\MarksCalculatorAPI\\MarksCalculatorAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\yadav\\Documents\\Project\\Marks Calculator\\MarksCalculatorAPI\\MarksCalculatorAPI.csproj": {
+    "C:\\Users\\Yash\\Desktop\\Personal\\yatin-calculator\\Calculator\\MarksCalculatorAPI\\MarksCalculatorAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\yadav\\Documents\\Project\\Marks Calculator\\MarksCalculatorAPI\\MarksCalculatorAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Yash\\Desktop\\Personal\\yatin-calculator\\Calculator\\MarksCalculatorAPI\\MarksCalculatorAPI.csproj",
         "projectName": "MarksCalculatorAPI",
-        "projectPath": "C:\\Users\\yadav\\Documents\\Project\\Marks Calculator\\MarksCalculatorAPI\\MarksCalculatorAPI.csproj",
-        "packagesPath": "C:\\Users\\yadav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\yadav\\Documents\\Project\\Marks Calculator\\MarksCalculatorAPI\\obj\\",
+        "projectPath": "C:\\Users\\Yash\\Desktop\\Personal\\yatin-calculator\\Calculator\\MarksCalculatorAPI\\MarksCalculatorAPI.csproj",
+        "packagesPath": "C:\\Users\\Yash\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yash\\Desktop\\Personal\\yatin-calculator\\Calculator\\MarksCalculatorAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\yadav\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Yash\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

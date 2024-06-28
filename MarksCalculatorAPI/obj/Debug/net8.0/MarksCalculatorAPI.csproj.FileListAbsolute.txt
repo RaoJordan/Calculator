@@ -32,3 +32,37 @@ C:\Users\yadav\Documents\Project\Marks Calculator\MarksCalculatorAPI\obj\Debug\n
 C:\Users\yadav\Documents\Project\Marks Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.pdb
 C:\Users\yadav\Documents\Project\Marks Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.genruntimeconfig.cache
 C:\Users\yadav\Documents\Project\Marks Calculator\MarksCalculatorAPI\obj\Debug\net8.0\ref\MarksCalculatorAPI.dll
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\appsettings.json
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\MarksCalculatorAPI.exe
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\MarksCalculatorAPI.deps.json
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\MarksCalculatorAPI.runtimeconfig.json
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\MarksCalculatorAPI.dll
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\MarksCalculatorAPI.pdb
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.csproj.AssemblyReference.cache
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.AssemblyInfoInputs.cache
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.AssemblyInfo.cs
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.csproj.CoreCompileInputs.cache
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.sourcelink.json
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\staticwebassets\msbuild.MarksCalculatorAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\staticwebassets\msbuild.build.MarksCalculatorAPI.props
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.MarksCalculatorAPI.props
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.MarksCalculatorAPI.props
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\scopedcss\bundle\MarksCalculatorAPI.styles.css
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCal.8AE809F4.Up2Date
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.dll
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\refint\MarksCalculatorAPI.dll
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.pdb
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\MarksCalculatorAPI.genruntimeconfig.cache
+C:\Users\Yash\Desktop\Personal\yatin-calculator\Calculator\MarksCalculatorAPI\obj\Debug\net8.0\ref\MarksCalculatorAPI.dll

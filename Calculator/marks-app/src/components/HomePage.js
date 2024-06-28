@@ -12,39 +12,47 @@ const initialSubjects = [
 ];
 
 const HomePage = () => {
-  const [subjects, setSubjects] = useState(initialSubjects);
-  const [marks, setMarks] = useState(Array(initialSubjects.length).fill(""));
+  const [subjects, setSubjects] = useState(initialSubjects.map(subject => ({ ...subject, marks: "", maxMarks: "" })));
   const [percentage, setPercentage] = useState(0);
   const navigate = useNavigate();
 
   const handleCalculatePercentage = async () => {
     try {
-      const marksToSend = Object.keys(marks).map((subject, index) => {
-        return { Subject: subject, Marks: marks[subject] };
-      });
-  
-      const response = await fetch("http://localhost:5017/marks/calculate", {
+      // Validation check for marks exceeding max marks
+      for (const subject of subjects) {
+        if (parseInt(subject.marks, 10) > parseInt(subject.maxMarks, 10)) {
+          window.alert(`Marks for ${subject.name} cannot be greater than Max Marks`);
+          return;
+        }
+      }
+
+      const marksToSend = subjects.map(subject => ({
+        Subject: subject.name,
+        Marks: parseInt(subject.marks, 10),
+        MaxMarks: parseInt(subject.maxMarks, 10),
+      }));
+
+      const response = await fetch("http://localhost:5017/api/marks/calculate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(marksToSend),
       });
-  
+
       if (!response.ok) {
         throw new Error("Failed to calculate percentage");
       }
-  
+
       const data = await response.json();
-      setPercentage(data);
+      setPercentage(data.toFixed(2));
     } catch (error) {
       console.error("Error calculating percentage:", error);
       // Handle error (e.g., show a message to the user)
     }
   };
-  
 
-  const handleNextPage = () => {
+  const handleNextPage = async () => {
     navigate("/piechart");
   };
 
@@ -52,19 +60,16 @@ const HomePage = () => {
     const newSubject = {
       id: subjects.length + 1,
       name: "",
+      marks: "",
+      maxMarks: "",
     };
     setSubjects([...subjects, newSubject]);
-    setMarks([...marks, ""]);
   };
 
   const handleDeleteSubject = (index) => {
     const newSubjects = [...subjects];
     newSubjects.splice(index, 1);
     setSubjects(newSubjects);
-
-    const newMarks = [...marks];
-    newMarks.splice(index, 1);
-    setMarks(newMarks);
   };
 
   const handleSubjectNameChange = (index, newName) => {
@@ -73,14 +78,27 @@ const HomePage = () => {
     setSubjects(newSubjects);
   };
 
+  const handleMarksChange = (index, newMarks) => {
+    const newSubjects = [...subjects];
+    newSubjects[index].marks = newMarks;
+    setSubjects(newSubjects);
+  };
+
+  const handleMaxMarksChange = (index, newMaxMarks) => {
+    const newSubjects = [...subjects];
+    newSubjects[index].maxMarks = newMaxMarks;
+    setSubjects(newSubjects);
+  };
+
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className=" p-6  shadow-lg bg-purple-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 border border-gray-100">
+      <div className="p-6 shadow-lg bg-purple-700 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 border border-gray-100">
         <table className="w-full mb-4">
           <thead>
             <tr>
               <th className="py-2 px-4">Subject Name</th>
-              <th className="py-2 px-4">Marks</th>
+              <th className="py-2 px-4">Marks Scored</th>
+              <th className="py-2 px-4">Max Marks</th>
             </tr>
           </thead>
           <tbody>
@@ -99,12 +117,20 @@ const HomePage = () => {
                 <td className="py-2 px-4">
                   <input
                     type="number"
-                    value={marks[index]}
-                    onChange={(e) => {
-                      const newMarks = [...marks];
-                      newMarks[index] = e.target.value;
-                      setMarks(newMarks);
-                    }}
+                    value={subject.marks}
+                    onChange={(e) =>
+                      handleMarksChange(index, e.target.value)
+                    }
+                    className="w-20 px-2 py-1 border rounded focus:outline-none focus:border-blue-500"
+                  />
+                </td>
+                <td className="py-2 px-4">
+                  <input
+                    type="number"
+                    value={subject.maxMarks}
+                    onChange={(e) =>
+                      handleMaxMarksChange(index, e.target.value)
+                    }
                     className="w-20 px-2 py-1 border rounded focus:outline-none focus:border-blue-500"
                   />
                 </td>
@@ -122,17 +148,16 @@ const HomePage = () => {
             ))}
           </tbody>
         </table>
-        <div className="mt-4  flex justify-center">
+        <div className="mt-4 flex justify-center">
           <button
             onClick={handleAddSubject}
-            className=" bg-blue-700  bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 border border-gray-100
- text-white px-4 py-2 rounded mr-2 hover:bg-blue-600"
+            className="bg-blue-700 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 border border-gray-100 text-white px-4 py-2 rounded mr-2 hover:bg-blue-600"
           >
             Add Subject
           </button>
           <button
             onClick={handleCalculatePercentage}
-            className="bg-green-500  bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 border border-gray-100 text-white px-4 py-2 rounded mr-2 hover:bg-green-700"
+            className="bg-green-500 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-70 border border-gray-100 text-white px-4 py-2 rounded mr-2 hover:bg-green-700"
           >
             Calculate Percentage
           </button>
@@ -140,7 +165,7 @@ const HomePage = () => {
         <div className="mt-4 mr-10 flex justify-center">
           {percentage > 0 && (
             <p className="bg-blue-100 text-blue-900 px-4 py-2 rounded">
-              Percentage: {percentage}%
+              Average Percentage: {percentage}%
             </p>
           )}
         </div>

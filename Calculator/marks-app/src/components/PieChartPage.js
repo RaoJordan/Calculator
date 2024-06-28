@@ -1,7 +1,30 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title
+} from 'chart.js';
 import { Pie } from "react-chartjs-2";
+
+// Register the required components
+ChartJS.register(
+  ArcElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title
+);
 
 const PieChartPage = () => {
   const navigate = useNavigate();
@@ -15,13 +38,13 @@ const PieChartPage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5017/marks/marks");
+        const response = await fetch("http://localhost:5017/api/marks/marks");
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         }
         const data = await response.json();
         console.log(data)
-        // Assuming data is an array of objects with { label: string, value: number }
+        // Assuming data is an array of objects with { subject: string, marks: number }
         const chartData = {
           labels: data.map(item => item.subject),
           datasets: [

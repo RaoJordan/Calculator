@@ -1,31 +1,28 @@
-using Microsoft.AspNetCore.Mvc;
-using MarksCalculatorAPI.Models;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace MarksCalculatorAPI.Controllers
+[HttpPost("calculate")]
+public ActionResult<double> CalculatePercentage([FromBody] List<MarksModel> marks)
 {
-    [ApiController]
-    [Route("[controller]")]
-    public class MarksCalculatorAPI : ControllerBase
+    if (marks == null || !marks.Any())
     {
-        private static List<MarksModel> _marksData = new List<MarksModel>();
-        [HttpPost("calculate")]
-        public ActionResult<double> CalculatePercentage([FromBody] List<MarksModel> marks)
+        return BadRequest("Marks cannot be empty");
+    }
+
+    _marksData.Clear();  // Clear previous data
+    _marksData.AddRange(marks);
+
+    double totalPercentage = 0;
+
+    foreach (var mark in marks)
+    {
+        if (mark.MaxMarks <= 0)
         {
-            if (marks == null || !marks.Any())
-            {
-                return BadRequest("Marks cannot be empty");
-            }
-            _marksData.AddRange(marks);
-            double totalMarks = marks.Sum(m => m.Marks);
-            double percentage = (totalMarks / (marks.Count * 100)) * 100;
-            return Ok(percentage);
+            return BadRequest("Max marks must be greater than zero");
         }
-    [HttpGet("marks")]
-    public ActionResult<List<MarksModel>> GetMarksData()
-    {
-        return Ok(_marksData); // Endpoint to retrieve stored marks data
+
+        double percentage = Math.Round(((double)mark.Marks / mark.MaxMarks) * 100, 2);
+        totalPercentage += percentage;
     }
-    }
+
+    double averagePercentage = totalPercentage / marks.Count;
+
+    return Ok(averagePercentage);
 }
